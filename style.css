@@ -1,0 +1,266 @@
+:root {
+    /* Paleta Obsidian Gold do Stitch */
+    --surface: #121414;
+    --surface-container-lowest: #0c0f0f;
+    --surface-container-low: #1a1c1c;
+    --surface-container: #1e2020;
+    --on-surface: #e2e2e2;
+    --on-surface-variant: #d0c5af;
+    --primary: #f2ca50;
+    --primary-container: #d4af37;
+    --on-primary: #3c2f00;
+    
+    --font-heading: 'Noto Serif', serif;
+    --font-body: 'Manrope', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--surface);
+    color: var(--on-surface);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho Limpo */
+.header {
+    text-align: center;
+    padding: 20px 0; /* Menos espaço no topo para não empurrar a logo pra cima dos rostos */
+    position: relative;
+    z-index: 10;
+}
+
+.brand-logo {
+    max-width: 140px; 
+    height: auto;
+    display: inline-block;
+    background-color: #000000; /* Fundo preto para camuflar o fundo do JPEG */
+    border-radius: 16px; /* Bordas arredondadas elegantes */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Filete dourado ao redor */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra de profundidade */
+    padding: 5px; /* Leve respiro interno */
+}
+
+/* Imagem Hero integrada ao topo do layout */
+.hero-image {
+    width: 100%;
+    height: 65vh; /* Altura ajustada */
+    background-image: url('TER02465.jpg');
+    background-size: cover;
+    background-position: center 10%; /* Foca mais no topo para mostrar bem os rostos */
+    position: relative;
+    /* Margem negativa para o conteúdo subir um pouco e sobrepor o degradê suave */
+    margin-bottom: -100px; 
+}
+
+/* Degradê que faz a transição perfeita da imagem para a cor de fundo (Obsidian) */
+.hero-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(18,20,20,0.1) 0%, rgba(18,20,20,0.6) 60%, var(--surface) 100%);
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Layout Editorial / Assimétrico */
+.editorial-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px;
+    padding: 64px 0 120px 0;
+}
+
+.headline-col {
+    flex: 1;
+    min-width: 300px;
+}
+
+.title-main {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--on-surface);
+    margin-bottom: 32px;
+}
+
+.gold-accent-line {
+    height: 2px;
+    width: 80px;
+    background: var(--primary-container);
+}
+
+.text-col {
+    flex: 2;
+    min-width: 300px;
+}
+
+.lead-text {
+    font-size: 1.125rem;
+    color: var(--on-surface);
+    margin-bottom: 32px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.text {
+    font-size: 1rem;
+    color: var(--on-surface-variant);
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+/* Cartões com Glassmorphism (Efeito de vidro escuro) */
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-bottom: 120px;
+}
+
+.glass-card {
+    background: rgba(30, 32, 32, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(212, 175, 55, 0.2); /* Reflexo dourado sutil no topo */
+    padding: 40px;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--primary-container);
+}
+
+.label-caps {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--primary-container);
+    margin-bottom: 16px;
+    font-family: var(--font-body);
+}
+
+.card-value {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--on-surface);
+}
+
+.card-subvalue {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--on-surface-variant);
+    font-weight: 400;
+}
+
+/* Rodapé */
+.footer-msg {
+    text-align: center;
+    padding: 64px 0 120px 0;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Brilho radial dourado no fundo da assinatura */
+.gold-accent-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(18, 20, 20, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.footer-msg p {
+    font-size: 1.125rem;
+    color: var(--on-surface-variant);
+    margin-bottom: 40px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.footer-logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 160px; /* Tamanho da logo no rodapé */
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px; /* Menos margem nas laterais da tela do celular */
+    }
+
+    .hero-image {
+        height: 55vh; /* Um pouco mais alto para evitar cortes estranhos */
+        margin-bottom: -50px; 
+        background-position: center top; /* Garante as cabeças sempre visíveis */
+    }
+
+    .editorial-section {
+        flex-direction: column;
+        gap: 32px;
+        padding: 32px 0 64px 0; /* Respiro menor entre as seções */
+    }
+    
+    .title-main {
+        font-size: 2.8rem; /* Título mais amigável para telas pequenas */
+        margin-bottom: 24px;
+    }
+    
+    .lead-text {
+        font-size: 1.05rem;
+        margin-bottom: 24px;
+    }
+
+    .event-details {
+        grid-template-columns: 1fr; /* Força 1 cartão por linha (em vez de quebrar de forma imprevisível) */
+        gap: 20px;
+        margin-bottom: 80px;
+    }
+    
+    .glass-card {
+        padding: 24px; /* Card mais compacto */
+    }
+
+    .footer-msg {
+        padding: 40px 0 80px 0; /* Reduz muito o espaço vazio no final da página */
+    }
+
+    .footer-msg p {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .footer-logo {
+        max-width: 130px; /* Logo levemente menor no celular */
+    }
+}
