@@ -10,8 +10,8 @@
     --primary-container: #d4af37;
     --on-primary: #3c2f00;
     
-    --font-heading: 'Ador Hairline', 'Noto Serif', serif;
-    --font-body: 'Ador Hairline', 'Manrope', sans-serif;
+    --font-heading: 'Ador Hairline', sans-serif;
+    --font-body: 'Poppins', sans-serif;
 }
 
 * {
@@ -114,28 +114,26 @@ body {
 }
 
 .headline-logo {
-    max-width: 200px;
+    max-width: 260px;
     height: auto;
     display: block;
     position: relative;
     z-index: 1;
 }
 
-.title-main {
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--on-surface);
-    margin-bottom: 32px;
+.title-logo {
+    max-width: 100%;
+    width: 380px;
+    height: auto;
+    display: block;
+    margin-bottom: 16px;
 }
 
 .subtitle-main {
     color: var(--primary-container);
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    margin-top: -20px;
+    margin-top: 0;
     margin-bottom: 24px;
     letter-spacing: 0.1em;
 }
@@ -239,8 +237,7 @@ body {
     text-decoration: none;
     padding: 20px 56px;
     border-radius: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    letter-spacing: 0.05em;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
     overflow: hidden;
@@ -332,14 +329,14 @@ body {
         padding: 32px 0 64px 0; /* Respiro menor entre as seções */
     }
     
-    .title-main {
-        font-size: 2.4rem; /* Título mais amigável para telas pequenas */
-        margin-bottom: 24px;
+    .title-logo {
+        width: 280px;
+        margin-bottom: 16px;
     }
 
     .subtitle-main {
         font-size: 1rem;
-        margin-top: -16px;
+        margin-top: 0;
     }
     
     .lead-text {
