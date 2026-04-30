@@ -10,8 +10,8 @@
     --primary-container: #d4af37;
     --on-primary: #3c2f00;
     
-    --font-heading: 'Noto Serif', serif;
-    --font-body: 'Manrope', sans-serif;
+    --font-heading: 'Ador Hairline', 'Noto Serif', serif;
+    --font-body: 'Ador Hairline', 'Manrope', sans-serif;
 }
 
 * {
@@ -28,12 +28,15 @@ body {
     overflow-x: hidden;
 }
 
-/* Cabeçalho Limpo */
-.header {
+/* Cabeçalho Flutuante no Topo */
+.top-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    padding: 20px 0; /* Menos espaço no topo para não empurrar a logo pra cima dos rostos */
-    position: relative;
-    z-index: 10;
+    padding-top: 40px;
+    z-index: 50;
 }
 
 .brand-logo {
@@ -51,7 +54,7 @@ body {
 .hero-image {
     width: 100%;
     height: 65vh; /* Altura ajustada */
-    background-image: url('TER02465.jpg');
+    background-image: url('TER02476.JPG');
     background-size: cover;
     background-position: center 10%; /* Foca mais no topo para mostrar bem os rostos */
     position: relative;
@@ -89,6 +92,33 @@ body {
 .headline-col {
     flex: 1;
     min-width: 300px;
+}
+
+.headline-logo-container {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.headline-logo-container::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: rgba(0, 0, 0, 0.7); /* Fundo preto para contraste */
+    filter: blur(20px); /* Efeito de blur/desfoque */
+    border-radius: 50%; /* Um blur arredondado */
+    z-index: -1;
+}
+
+.headline-logo {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
 .title-main {
@@ -189,6 +219,13 @@ body {
 .action-section {
     text-align: center;
     margin-bottom: 120px;
+}
+
+.action-logo {
+    display: block;
+    margin: 0 auto 32px auto;
+    max-width: 140px;
+    height: auto;
 }
 
 .btn-primary {
