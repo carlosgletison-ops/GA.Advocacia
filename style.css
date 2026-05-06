@@ -380,4 +380,69 @@ body {
     .footer-logo {
         max-width: 130px; /* Logo levemente menor no celular */
     }
+
+    .btn-instagram {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+    }
 }
+
+/* ==================== Botão Instagram ==================== */
+.social-section {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.btn-instagram {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    box-shadow:
+        0 8px 24px rgba(131, 58, 180, 0.35),
+        0 2px 8px rgba(253, 29, 29, 0.2);
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efeito shine animado (igual ao botão principal) */
+.btn-instagram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg);
+    z-index: -1;
+    animation: shine 3.5s infinite;
+}
+
+.btn-instagram:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow:
+        0 16px 40px rgba(131, 58, 180, 0.5),
+        0 4px 12px rgba(253, 29, 29, 0.35);
+}
+
+.btn-instagram:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.instagram-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
